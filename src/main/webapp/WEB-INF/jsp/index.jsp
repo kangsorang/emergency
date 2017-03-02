@@ -66,7 +66,7 @@
 	</style>
 </head>
 <body>
-    <h1>비상연락망 입력 페이지 ${name}</h1>
+    <h1>test ${name}</h1>
     <form id="contact" method="post" action="">
 		<!-- Name -->
 		<div>
