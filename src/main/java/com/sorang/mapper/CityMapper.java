@@ -10,11 +10,11 @@ import com.sorang.domain.City;
 @Mapper
 public interface CityMapper {
 
-	@Select("select * from city where state = #{inputState}")
+	@Select("select * from tb_city where state = #{inputState}")
 	City findByState(@Param("inputState") String state);
 	
 	@Insert(
-			"insert into city (id, name, state, country) " + 
+			"insert into tb_city (id, name, state, country) " + 
 			"values (#{inputCity.id},#{inputCity.name},#{inputCity.state},#{inputCity.country})")
 	boolean insertCity(@Param("inputCity") City city);
 
