@@ -12,7 +12,8 @@ import com.sorang.domain.Student;
 
 @Mapper
 public interface StudentMapper {
-	@Select("select * from tb_students")
+	@Select("select * from tb_students "
+			+ "ORDER BY name")
 	List<Student> getAllStudents();
 	
 	@Insert(

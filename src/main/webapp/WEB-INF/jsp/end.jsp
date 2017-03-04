@@ -44,7 +44,7 @@
   	  <a class='ui-btn' onclick='finishClick()'>메인 페이지로 돌아가기</a>
 		<script>
 		function finishClick(objButton){
-			location.href="http://192.168.25.36:8080";
+			location.href="http://uisoon.cf";
 		}
 		</script>
 	  </div>

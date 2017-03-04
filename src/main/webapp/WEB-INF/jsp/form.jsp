@@ -87,15 +87,13 @@
 <body>
 	<div data-role="page" id="pagetwo">
        <div data-role="header">
-	      <h1>비상연락망을 위한 정보 입력 페이지</h1>
+	      <h1>${name}의 비상연락망</h1>
 	   </div>
        <div data-role="main" class="ui-content">
          <form method="post" action="/enterform">
        	    <!-- Name -->
-			<div style="border:1px solid gold; padding:7px;">
-				<label for="contact_name">이름 : 따로 입력할 필요 없음</label><br>
-				<input type="text" id="contact_name" class="myvalid" name="contact_name" value="${name}" disabled="disabled"></input><br>
-			</div><br>
+			<input type="text" id="contact_name" class="myvalid" name="contact_name" value="${name}" style="display:none;"></input><br>
+			<br>
 			<!-- Email -->
 			<div style="border:1px solid gold; padding:7px;">
 				<label for="contact_email">휴대폰 번호 : ex) 01012345678</label><br>

@@ -74,12 +74,12 @@ public class HelloController {
 			// 생일을 잘못 입력한 케이스...
 			return null;
 		} else {
-			model.addAttribute("name", ret.getName());
-			model.addAttribute("mobile_number_student", ret.getMobile_number_student());
-			model.addAttribute("mobile_number_mother", ret.getMobile_number_mother());
-			model.addAttribute("mobile_number_father", ret.getMobile_number_father());
-			model.addAttribute("phone_number_home", ret.getPhone_number_home());
-			model.addAttribute("home_address", ret.getAddress());
+			model.addAttribute("name", ret.getName().trim());
+			model.addAttribute("mobile_number_student", ret.getMobile_number_student().trim());
+			model.addAttribute("mobile_number_mother", ret.getMobile_number_mother().trim());
+			model.addAttribute("mobile_number_father", ret.getMobile_number_father().trim());
+			model.addAttribute("phone_number_home", ret.getPhone_number_home().trim());
+			model.addAttribute("home_address", ret.getAddress().trim());
 			
 			return "form";
 		}
@@ -88,16 +88,22 @@ public class HelloController {
 	@RequestMapping("/enterform")
 	public String enterFormData(Model model, HttpServletRequest request) {
 		Student st = new Student();
-		st.setName(request.getParameter("contact_name"));
-		st.setMobile_number_student(request.getParameter("mobile_student"));
-		st.setMobile_number_mother(request.getParameter("mobile_mother"));
-		st.setMobile_number_father(request.getParameter("mobile_father"));
-		st.setPhone_number_home(request.getParameter("phone"));
-		st.setAddress(request.getParameter("address"));
+		st.setName(request.getParameter("contact_name").trim());
+		st.setMobile_number_student(request.getParameter("mobile_student").trim());
+		st.setMobile_number_mother(request.getParameter("mobile_mother").trim());
+		st.setMobile_number_father(request.getParameter("mobile_father").trim());
+		st.setPhone_number_home(request.getParameter("phone").trim());
+		st.setAddress(request.getParameter("address").trim());
 		
 		boolean ret = studentMapper.updateStudent(st);
 		
 		return "end";
+	}
+	
+	/** 관리자 페이지 **/
+	@RequestMapping("/rang")
+	public String printAllData(Model model, HttpServletRequest request) {
+		return "rangrang";
 	}
 	
 	@RequestMapping("/all")
@@ -115,10 +121,10 @@ public class HelloController {
 		Student student = new Student();
 		student.setBirthday(123);
 		student.setName("김민석");
-		student.setMobile_number_student("01055554444");
-		student.setMobile_number_father("01056784938");
-		student.setMobile_number_mother("75347538475345");
-		student.setAddress("서울 1235345345주공아파트");
+		//student.setMobile_number_student("01055554444");
+		//student.setMobile_number_father("01056784938");
+		//student.setMobile_number_mother("75347538475345");
+		//student.setAddress("서울 1235345345주공아파트");
 		
 		studentMapper.insertStudent(student);
 	}
