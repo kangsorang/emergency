@@ -62,6 +62,9 @@ public class HelloController {
 	public String selectStudent(Model model, HttpServletRequest request) {
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
+		if (day.length() == 1) {
+			day = "0".concat(day);
+		};
 		String name = request.getParameter("name");
 		System.out.println(" selectStudent : " + name + " , " + month + " , " + day);
 		Student req = new Student();

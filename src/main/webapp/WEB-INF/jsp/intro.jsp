@@ -110,7 +110,12 @@
 	      </fieldset>
 	      <input type="submit" value="생일을 다 입력했으면 여기를 클릭 !!" style="min-width: 100%;">
 	    </form>
-	    <a href="#" class="ui-btn" data-rel="back">메인 페이지로 돌아가기</a>
+	    <a class='ui-btn' onclick='finishClick()'>메인 페이지로 돌아가기</a>
+		<script>
+		function finishClick(objButton){
+			location.href="http://uisoon.cf";
+		}
+		</script>
 	  </div>
 	  <div data-role="footer">
 	    <h1>powered by sorang</h1>

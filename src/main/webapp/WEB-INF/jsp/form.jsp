@@ -118,7 +118,7 @@
 			
 			<!--Website -->
 			<div style="border:1px solid gold; padding:7px;">
-				<label for="contact_website">집주소 : ex) 경기도 하안로 364-1 하안주공 9단지</label><br>
+				<label for="contact_website">집주소 : ex) 경기도 광명시 덕단이로 43 광문중학교</label><br>
 				<textarea id="address" name="address">${home_address}</textarea><br>
 			</div>				<br>		
 			<!-- Submit Button -->
